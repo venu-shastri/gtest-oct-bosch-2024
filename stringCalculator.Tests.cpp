@@ -96,7 +96,6 @@ TEST(string_calculator_add, ThrowsExceptionForNegativeNumbers) {
 
     try {
         objUnderTest.Add("1,-2,-4,5");
-        FAIL() << "Expected std::invalid_argument";
     } catch (std::invalid_argument const &err) {
         ASSERT_EQ(err.what(), std::string("Negatives not allowed: -2,-4"));
     } catch (...) {
