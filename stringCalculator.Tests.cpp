@@ -4,7 +4,7 @@
 //TEST(TestSuiteName, TestCaseName)
 TEST(string_calculator_add,when_passed_a_single_number_returns_0_for_Empty){
   //Arrange
-  stringCalculator objUnderTest;
+  StringCalculator objUnderTest;
   string input="";
   int expectedValue=0;
 
