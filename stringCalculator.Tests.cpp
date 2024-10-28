@@ -67,7 +67,7 @@ TEST(string_calculator_add, ReturnsTheSumForMultipleCommaDelimitedNumbers) {
   ASSERT_EQ(expectedValue,actualValue);
 }
 
-TEST_F(string_calculator_add, ReturnsTheSumForNewlineAndCommaDelimitedNumbers) {
+TEST(string_calculator_add, ReturnsTheSumForNewlineAndCommaDelimitedNumbers) {
     StringCalculator objUnderTest;
     string input="1\n2,3";
     int expectedValue=6;
@@ -79,7 +79,7 @@ TEST_F(string_calculator_add, ReturnsTheSumForNewlineAndCommaDelimitedNumbers) {
   ASSERT_EQ(expectedValue,actualValue);
 }
 
-TEST_F(string_calculator_add, ReturnsTheSumBasedOnCustomDelimiter) {
+TEST(string_calculator_add, ReturnsTheSumBasedOnCustomDelimiter) {
     StringCalculator objUnderTest;
   string input="//;\n1;2";
     int expectedValue=3;
