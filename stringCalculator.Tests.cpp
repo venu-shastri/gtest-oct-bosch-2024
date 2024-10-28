@@ -43,27 +43,27 @@ TEST(string_calculator_add,when_passed_a_single_number_returns_1_for_1){
   ASSERT_EQ(expectedValue,actualValue);
   }
 
-TEST_F(StringCalculatorTest, ReturnsTheSumForTwoCommaDelimitedNumbers) {
+TEST_F(string_calculator_add, ReturnsTheSumForTwoCommaDelimitedNumbers) {
     StringCalculator objUnderTest;
     ASSERT_EQ(objUnderTest.Add("1,2"), 3);
 }
 
-TEST_F(StringCalculatorTest, ReturnsTheSumForMultipleCommaDelimitedNumbers) {
+TEST_F(string_calculator_add, ReturnsTheSumForMultipleCommaDelimitedNumbers) {
     StringCalculator objUnderTest;
     ASSERT_EQ(objUnderTest.Add("1,2,3"), 6);
 }
 
-TEST_F(StringCalculatorTest, ReturnsTheSumForNewlineAndCommaDelimitedNumbers) {
+TEST_F(string_calculator_add, ReturnsTheSumForNewlineAndCommaDelimitedNumbers) {
     StringCalculator objUnderTest;
     ASSERT_EQ(objUnderTest.Add("1\n2,3"), 6);
 }
 
-TEST_F(StringCalculatorTest, ReturnsTheSumBasedOnCustomDelimiter) {
+TEST_F(string_calculator_add, ReturnsTheSumBasedOnCustomDelimiter) {
     StringCalculator objUnderTest;
     ASSERT_EQ(objUnderTest.Add("//;\n1;2"), 3);
 }
 
-TEST_F(StringCalculatorTest, ThrowsExceptionForNegativeNumbers) {
+TEST_F(string_calculator_add, ThrowsExceptionForNegativeNumbers) {
     StringCalculator objUnderTest;
     try {
         objUnderTest.Add("1,-2,-4,5");
@@ -75,22 +75,22 @@ TEST_F(StringCalculatorTest, ThrowsExceptionForNegativeNumbers) {
     }
 }
 
-TEST_F(StringCalculatorTest, IgnoresNumbersOver1000) {
+TEST_F(string_calculator_add, IgnoresNumbersOver1000) {
     StringCalculator objUnderTest;
     ASSERT_EQ(objUnderTest.Add("42,1001,3"), 45);
 }
 
-TEST_F(StringCalculatorTest, UsesMulticharacterDelimiter) {
+TEST_F(string_calculator_add, UsesMulticharacterDelimiter) {
     StringCalculator objUnderTest;
     ASSERT_EQ(objUnderTest.Add("//[***]\n8***2***3"), 13);
 }
 
-TEST_F(StringCalculatorTest, SumsOnEachCustomDelimiter) {
+TEST_F(string_calculator_add, SumsOnEachCustomDelimiter) {
     StringCalculator objUnderTest;
     ASSERT_EQ(objUnderTest.Add("//[*][%]\n4*2%3"), 9);
 }
 
-TEST_F(StringCalculatorTest, SumsOnEachMulticharacterDelimiter) {
+TEST_F(string_calculator_add, SumsOnEachMulticharacterDelimiter) {
     StringCalculator objUnderTest;
     ASSERT_EQ(objUnderTest.Add("//[**][%^]\n4**1%^9"), 14);
 }
