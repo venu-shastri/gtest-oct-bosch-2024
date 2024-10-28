@@ -45,26 +45,55 @@ TEST(string_calculator_add,when_passed_a_single_number_returns_1_for_1){
 
 TEST_F(string_calculator_add, ReturnsTheSumForTwoCommaDelimitedNumbers) {
     StringCalculator objUnderTest;
-    ASSERT_EQ(objUnderTest.Add("1,2"), 3);
+    string input="1,2";
+    int expectedValue=3;
+
+  //Act
+  int actualValue=objUnderTest.Add(input);
+
+  //ASSERT
+  ASSERT_EQ(expectedValue,actualValue);
 }
 
 TEST_F(string_calculator_add, ReturnsTheSumForMultipleCommaDelimitedNumbers) {
     StringCalculator objUnderTest;
-    ASSERT_EQ(objUnderTest.Add("1,2,3"), 6);
+    string input="1,2,3";
+    int expectedValue=6;
+
+  //Act
+  int actualValue=objUnderTest.Add(input);
+
+  //ASSERT
+  ASSERT_EQ(expectedValue,actualValue);
 }
 
 TEST_F(string_calculator_add, ReturnsTheSumForNewlineAndCommaDelimitedNumbers) {
     StringCalculator objUnderTest;
-    ASSERT_EQ(objUnderTest.Add("1\n2,3"), 6);
+    string input="1\n2,3";
+    int expectedValue=6;
+
+  //Act
+  int actualValue=objUnderTest.Add(input);
+
+  //ASSERT
+  ASSERT_EQ(expectedValue,actualValue);
 }
 
 TEST_F(string_calculator_add, ReturnsTheSumBasedOnCustomDelimiter) {
     StringCalculator objUnderTest;
-    ASSERT_EQ(objUnderTest.Add("//;\n1;2"), 3);
+  string input="//;\n1;2";
+    int expectedValue=3;
+
+  //Act
+  int actualValue=objUnderTest.Add(input);
+
+  //ASSERT
+  ASSERT_EQ(expectedValue,actualValue);
 }
 
 TEST_F(string_calculator_add, ThrowsExceptionForNegativeNumbers) {
     StringCalculator objUnderTest;
+
     try {
         objUnderTest.Add("1,-2,-4,5");
         FAIL() << "Expected std::invalid_argument";
@@ -77,20 +106,48 @@ TEST_F(string_calculator_add, ThrowsExceptionForNegativeNumbers) {
 
 TEST_F(string_calculator_add, IgnoresNumbersOver1000) {
     StringCalculator objUnderTest;
-    ASSERT_EQ(objUnderTest.Add("42,1001,3"), 45);
+  string input="42,1001,3";
+    int expectedValue=45;
+
+  //Act
+  int actualValue=objUnderTest.Add(input);
+
+  //ASSERT
+  ASSERT_EQ(expectedValue,actualValue);
 }
 
 TEST_F(string_calculator_add, UsesMulticharacterDelimiter) {
     StringCalculator objUnderTest;
-    ASSERT_EQ(objUnderTest.Add("//[***]\n8***2***3"), 13);
+  string input="//[***]\n8***2***3";
+    int expectedValue=13;
+
+  //Act
+  int actualValue=objUnderTest.Add(input);
+
+  //ASSERT
+  ASSERT_EQ(expectedValue,actualValue);
 }
 
 TEST_F(string_calculator_add, SumsOnEachCustomDelimiter) {
     StringCalculator objUnderTest;
-    ASSERT_EQ(objUnderTest.Add("//[*][%]\n4*2%3"), 9);
+  string input="//[*][%]\n4*2%3";
+    int expectedValue=9;
+
+  //Act
+  int actualValue=objUnderTest.Add(input);
+
+  //ASSERT
+  ASSERT_EQ(expectedValue,actualValue);
 }
 
 TEST_F(string_calculator_add, SumsOnEachMulticharacterDelimiter) {
     StringCalculator objUnderTest;
-    ASSERT_EQ(objUnderTest.Add("//[**][%^]\n4**1%^9"), 14);
+  string input="//[**][%^]\n4**1%^9";
+    int expectedValue=14;
+
+  //Act
+  int actualValue=objUnderTest.Add(input);
+
+  //ASSERT
+  ASSERT_EQ(expectedValue,actualValue);
 }
