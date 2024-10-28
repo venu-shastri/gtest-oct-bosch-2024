@@ -1,4 +1,4 @@
-#include "StringCalculator.h"
+#include "stringCalculator.h"
 
 class GetNegatives {
 private:
