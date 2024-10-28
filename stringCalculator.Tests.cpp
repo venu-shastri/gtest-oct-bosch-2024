@@ -43,7 +43,7 @@ TEST(string_calculator_add,when_passed_a_single_number_returns_1_for_1){
   ASSERT_EQ(expectedValue,actualValue);
   }
 
-TEST_F(string_calculator_add, ReturnsTheSumForTwoCommaDelimitedNumbers) {
+TEST(string_calculator_add, ReturnsTheSumForTwoCommaDelimitedNumbers) {
     StringCalculator objUnderTest;
     string input="1,2";
     int expectedValue=3;
@@ -55,7 +55,7 @@ TEST_F(string_calculator_add, ReturnsTheSumForTwoCommaDelimitedNumbers) {
   ASSERT_EQ(expectedValue,actualValue);
 }
 
-TEST_F(string_calculator_add, ReturnsTheSumForMultipleCommaDelimitedNumbers) {
+TEST(string_calculator_add, ReturnsTheSumForMultipleCommaDelimitedNumbers) {
     StringCalculator objUnderTest;
     string input="1,2,3";
     int expectedValue=6;
@@ -91,7 +91,7 @@ TEST_F(string_calculator_add, ReturnsTheSumBasedOnCustomDelimiter) {
   ASSERT_EQ(expectedValue,actualValue);
 }
 
-TEST_F(string_calculator_add, ThrowsExceptionForNegativeNumbers) {
+TEST(string_calculator_add, ThrowsExceptionForNegativeNumbers) {
     StringCalculator objUnderTest;
 
     try {
@@ -104,7 +104,7 @@ TEST_F(string_calculator_add, ThrowsExceptionForNegativeNumbers) {
     }
 }
 
-TEST_F(string_calculator_add, IgnoresNumbersOver1000) {
+TEST(string_calculator_add, IgnoresNumbersOver1000) {
     StringCalculator objUnderTest;
   string input="42,1001,3";
     int expectedValue=45;
@@ -116,7 +116,7 @@ TEST_F(string_calculator_add, IgnoresNumbersOver1000) {
   ASSERT_EQ(expectedValue,actualValue);
 }
 
-TEST_F(string_calculator_add, UsesMulticharacterDelimiter) {
+TEST(string_calculator_add, UsesMulticharacterDelimiter) {
     StringCalculator objUnderTest;
   string input="//[***]\n8***2***3";
     int expectedValue=13;
@@ -128,7 +128,7 @@ TEST_F(string_calculator_add, UsesMulticharacterDelimiter) {
   ASSERT_EQ(expectedValue,actualValue);
 }
 
-TEST_F(string_calculator_add, SumsOnEachCustomDelimiter) {
+TEST(string_calculator_add, SumsOnEachCustomDelimiter) {
     StringCalculator objUnderTest;
   string input="//[*][%]\n4*2%3";
     int expectedValue=9;
@@ -140,7 +140,7 @@ TEST_F(string_calculator_add, SumsOnEachCustomDelimiter) {
   ASSERT_EQ(expectedValue,actualValue);
 }
 
-TEST_F(string_calculator_add, SumsOnEachMulticharacterDelimiter) {
+TEST(string_calculator_add, SumsOnEachMulticharacterDelimiter) {
     StringCalculator objUnderTest;
   string input="//[**][%^]\n4**1%^9";
     int expectedValue=14;
