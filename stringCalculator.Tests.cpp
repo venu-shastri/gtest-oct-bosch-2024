@@ -42,3 +42,55 @@ TEST(string_calculator_add,when_passed_a_single_number_returns_1_for_1){
   //ASSERT
   ASSERT_EQ(expectedValue,actualValue);
   }
+
+TEST_F(StringCalculatorTest, ReturnsTheSumForTwoCommaDelimitedNumbers) {
+    StringCalculator objUnderTest;
+    ASSERT_EQ(objUnderTest.Add("1,2"), 3);
+}
+
+TEST_F(StringCalculatorTest, ReturnsTheSumForMultipleCommaDelimitedNumbers) {
+    StringCalculator objUnderTest;
+    ASSERT_EQ(objUnderTest.Add("1,2,3"), 6);
+}
+
+TEST_F(StringCalculatorTest, ReturnsTheSumForNewlineAndCommaDelimitedNumbers) {
+    StringCalculator objUnderTest;
+    ASSERT_EQ(objUnderTest.Add("1\n2,3"), 6);
+}
+
+TEST_F(StringCalculatorTest, ReturnsTheSumBasedOnCustomDelimiter) {
+    StringCalculator objUnderTest;
+    ASSERT_EQ(objUnderTest.Add("//;\n1;2"), 3);
+}
+
+TEST_F(StringCalculatorTest, ThrowsExceptionForNegativeNumbers) {
+    StringCalculator objUnderTest;
+    try {
+        objUnderTest.Add("1,-2,-4,5");
+        FAIL() << "Expected std::invalid_argument";
+    } catch (std::invalid_argument const &err) {
+        ASSERT_EQ(err.what(), std::string("Negatives not allowed: -2,-4"));
+    } catch (...) {
+        FAIL() << "Expected std::invalid_argument";
+    }
+}
+
+TEST_F(StringCalculatorTest, IgnoresNumbersOver1000) {
+    StringCalculator objUnderTest;
+    ASSERT_EQ(objUnderTest.Add("42,1001,3"), 45);
+}
+
+TEST_F(StringCalculatorTest, UsesMulticharacterDelimiter) {
+    StringCalculator objUnderTest;
+    ASSERT_EQ(objUnderTest.Add("//[***]\n8***2***3"), 13);
+}
+
+TEST_F(StringCalculatorTest, SumsOnEachCustomDelimiter) {
+    StringCalculator objUnderTest;
+    ASSERT_EQ(objUnderTest.Add("//[*][%]\n4*2%3"), 9);
+}
+
+TEST_F(StringCalculatorTest, SumsOnEachMulticharacterDelimiter) {
+    StringCalculator objUnderTest;
+    ASSERT_EQ(objUnderTest.Add("//[**][%^]\n4**1%^9"), 14);
+}
