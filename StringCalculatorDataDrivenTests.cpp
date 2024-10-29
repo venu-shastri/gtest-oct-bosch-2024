@@ -14,12 +14,13 @@ class StringCalculatorDataDrivenAddFixture:public testing::Test{
   void TearDown(){
         delete objUnderTest;
   }
-};
-
-void assertEachDataRow(string input,int expectedValue){
+  void assertEachDataRow(string input,int expectedValue){
     int actualValue=objUnderTest->Add(input);
     ASSERT_EQ(actualValue,expectedValue);
 }
+};
+
+
 TEST_F(StringCalculatorDataDrivenAddFixture, DataDrivenTest){
     vector<tuple<string,int>> dataSet;
     dataSet.push_back(make_tuple("",0));
