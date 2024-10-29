@@ -26,7 +26,7 @@ MockLogger logger;
 EXPECT_CALL(logger,write(StrEq("_speedThreshold value must be in the ramge {1-100} 150")));
 objUnderTest.monitor(&communicator,&speedSensor,&logger);
 }
-TEST(VehicleSpeedMonitorTestSuite,LoggerInteractionTesting){
+TEST(VehicleSpeedMonitorTestSuite,InteractionTesting){
 SpeedMonitor objUnderTest{40};
 MockCommunicator communicator;
 MockSpeedSensor speedSensor;
