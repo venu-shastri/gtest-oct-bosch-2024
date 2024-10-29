@@ -32,7 +32,8 @@ INSTANTIATE_TEST_SUITE_P(MixedScenariosDataSet, StringCalculatorAddParameterized
 make_tuple("2,1001", 2), // ignores 1001 
 make_tuple("//[***]\n1***2***3", 6), // multiple characters delimiter 
 make_tuple("//[*][%]\n1*2%3", 6), // multiple single character delimiters 
-make_tuple("//[**][%%]\n1**2%%3", 6) // multiple multi character delimiters ));
+make_tuple("//[**][%%]\n1**2%%3", 6) // multiple multi character delimiters
+));
 
 TEST_P(StringCalculatorAddParameterizedFixture, DataDrivenTestCase){
     string input=std::get<0>(GetParam());
