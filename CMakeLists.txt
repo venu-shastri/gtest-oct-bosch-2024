@@ -19,7 +19,7 @@ add_compile_options("--coverage")
 add_executable(
   unittestcode
   VehicleSpeedMonitor.cpp
-  VehicleSpeedMonitor.Tests.cpp
+ VehicleSpeedMonitorInteractionTestingUsingGmock.cpp
   
  )
 target_link_libraries(
