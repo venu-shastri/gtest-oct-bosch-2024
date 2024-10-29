@@ -33,5 +33,5 @@ TEST_P(StringCalculatorAddFixture, Returns_0_For_0){
 }
 TEST_F(StringCalculatorAddFixture, Throw_Invalid_Argumnet_Exceptio_For_Negetive_Numbers){
     string input="1,-2";
-    EXPECT_THROW(objUnderTest->Add(input),invlaid_argument);
+    EXPECT_THROW(objUnderTest->Add(input),invalid_argument);
   }
