@@ -18,11 +18,12 @@ enable_testing()
 add_compile_options("--coverage")
 add_executable(
   unittestcode
-  stringCalculator.cpp
+  #stringCalculator.cpp
   #stringCalculator.Tests.cpp
   #stringCalculator.TestFixture.cpp
   #StringCalculatorDataDrivenTests.cpp
   #StringCalculatorValueParameter.Tests.cpp
+  TestChallenge.cpp
   TestChallenge.Tests.cpp
  )
 target_link_libraries(
