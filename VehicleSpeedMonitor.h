@@ -13,6 +13,9 @@ class SpeedMonitor{
   
       public:
           SpeedMonitor(int speedThreshold): _speedThreshold{speedThreshold} {}
+            int getSpeedThreshold() const{
+                return this->_speedThreshold;
+            }
             //Dependency Injection 
           void monitor(IMessageCommunicator* communicator,ISpeedSensor* sensor,ILogger* logger);
 };
