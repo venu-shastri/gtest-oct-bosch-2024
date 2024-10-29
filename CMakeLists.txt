@@ -25,6 +25,7 @@ add_executable(
   #StringCalculatorValueParameter.Tests.cpp
   TestChallenge.cpp
   TestChallenge.Tests.cpp
+  TestChallenge.param.cpp
  )
 target_link_libraries(
   unittestcode
