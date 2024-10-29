@@ -24,6 +24,10 @@ class StringCalculatorAddParameterizedFixture:
 INSTANTIATE_TEST_SUITE_P(ValidValuesDataSet,StringCalculatorAddParameterizedFixture,testing::Values(
   make_tuple("",0),make_tuple("0",0),make_tuple("1",1),make_tuple("1,2",3)
 ));
+INSTANTIATE_TEST_SUITE_P(NegetiveValuesDataSet,StringCalculatorAddParameterizedFixture,testing::Values(
+  make_tuple("",10),make_tuple("0",12),make_tuple("1",10),make_tuple("1,2",6)
+));
+
 
 TEST_P(StringCalculatorAddParameterizedFixture, DataDrivenTestCase){
     string input=std::get<0>(GetParam());
