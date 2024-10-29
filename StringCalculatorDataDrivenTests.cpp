@@ -1,4 +1,4 @@
-#include "StringCalculator.h"
+#include "stringCalculator.h"
 #include <gtest/gtest.h>
 #include <vector>
 #include <tuple>
