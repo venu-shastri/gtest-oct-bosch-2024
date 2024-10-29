@@ -15,7 +15,7 @@ public:
 
 class MockSpeedSensor:public ISpeedSensor{
 public:
-MOCK_METHOD( int ,getCurrentSpeed,())
+MOCK_METHOD( int ,getCurrentSpeed,());
 };
 
 TEST(VehicleSpeedMonitorTestSuite,LoggerInteractionTesting){
@@ -32,7 +32,7 @@ MockCommunicator communicator;
 MockSpeedSensor speedSensor;
 MockLogger logger;
 EXPECT_CALL(speedSensor,getCurrentSpeed()).WillOnce(Return(50));
-EXPECT_CALL(communicator,pushMessage(StrEq(Current Speed in Miles 31.0686"))).WillOnce(Return(300));
+EXPECT_CALL(communicator,pushMessage(StrEq("Current Speed in Miles 31.0686"))).WillOnce(Return(300));
 objUnderTest.monitor(&communicator,&speedSensor,&logger);
 }
 
