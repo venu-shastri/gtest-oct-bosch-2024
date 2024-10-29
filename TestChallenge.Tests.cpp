@@ -14,25 +14,25 @@ protected:
 // Simple Test Case
 TEST_F(AddFunctionTest, AddsTwoPositiveNumbers) {
     add(3, 4, &result);
-    EXPECT_EQ(result, 7);
+    ASSERT_EQ(result, 7);
 }
 
 TEST_F(AddFunctionTest, AddsPositiveAndNegativeNumbers) {
     add(5, -2, &result);
-    EXPECT_EQ(result, 3);
+    ASSERT_EQ(result, 3);
 }
 
 TEST_F(AddFunctionTest, AddsTwoNegativeNumbers) {
     add(-3, -6, &result);
-    EXPECT_EQ(result, -9);
+    ASSERT_EQ(result, -9);
 }
 
 TEST_F(AddFunctionTest, AddsZero) {
     add(0, 0, &result);
-    EXPECT_EQ(result, 0);
+    ASSERT_EQ(result, 0);
 }
 
 TEST_F(AddFunctionTest, AddsZeroAndNumber) {
     add(0, 5, &result);
-    EXPECT_EQ(result, 5);
+    ASSERT_EQ(result, 5);
 }
