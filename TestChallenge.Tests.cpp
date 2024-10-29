@@ -1,5 +1,5 @@
-#include <gtest/gtest.h>
 #include "TestChallenge.h"
+#include <gtest/gtest.h>
 
 // Fixture Class
 
