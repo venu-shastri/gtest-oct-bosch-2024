@@ -22,7 +22,8 @@ add_executable(
   #stringCalculator.Tests.cpp
   #stringCalculator.TestFixture.cpp
   #StringCalculatorDataDrivenTests.cpp
-  StringCalculatorValueParameter.Tests.cpp
+  #StringCalculatorValueParameter.Tests.cpp
+  TestChallenge.Tests.cpp
  )
 target_link_libraries(
   unittestcode
