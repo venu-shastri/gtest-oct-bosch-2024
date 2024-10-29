@@ -34,8 +34,8 @@ SpeedMonitor objUnderTest{40};
 MockCommunicator communicator;
 MockSpeedSensor speedSensor;
 MockLogger logger;
- EXPECT_CALL(sensor, getCuurentSpeed()).WillOnce(Return(60));  // Speed below threshold  
- EXPECT_CALL(communicator, pushMessage(_)).WillOnce(450);      // No alert expected
+ EXPECT_CALL(speedSensor, getCurrentSpeed()).WillOnce(Return(60));  // Speed below threshold  
+ EXPECT_CALL(communicator, pushMessage(_)).WillOnce(Return(450));      // No alert expected
     EXPECT_CALL(logger, write(_)).Times(2);                  // Log is expected
 
 //EXPECT_CALL(speedSensor,getCurrentSpeed()).WillOnce(Return(50));
